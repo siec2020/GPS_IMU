@@ -62,7 +62,6 @@ void IMU_Getdata(void)
 	Mag->GetAxes(magnetometer);
 }
 
-
 void IMU_SendDataAccel(void)
 {
 	#if (SENDALL==0)
@@ -166,11 +165,6 @@ void IMU_SendDataAll(void)
 	#endif
 	IMU_SendDataRotation();
 }
-
-
-
-
-
 
 void printrawdata(void)
 {
