@@ -24,6 +24,7 @@ extern "C" {
 	void IMU_SendDataAll(void);
 	void printrawdata(void);
 	void printconvertdata(void);
+    void printIntoCSVformat(void);
 }
 
 

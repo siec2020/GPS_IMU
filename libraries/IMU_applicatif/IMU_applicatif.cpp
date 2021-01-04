@@ -224,4 +224,30 @@ void printconvertdata(void)
 		Serial.print(" ");
     }
     Serial.println("] \n\r");
+}	
+	
+void printIntoCSVformat(void)
+{
+	//ACCEL
+	//CONVERSION : INT giving acceleration in mg (millig) 
+	// to FLOAT giving acceleration in m/s²
+    
+    for (int i=0;i<3;i++)
+    {
+		fl_accelerometer[i]=(float(accelerometer[i])/1000.0)*VALG;
+		Serial.print(fl_accelerometer[i],3);
+		Serial.print(",");
+    }
+    
+	//GYRO
+	//CONVERTION : from INT giving orientation in mdps (milli degres per seconde) 
+	// to FLOAT giving orientation in rad/sec
+    
+    for (int i=0;i<3;i++)
+    {
+		fl_gyroscope[i]=(float(gyroscope[i])/1000.0)*(VALPI/180);
+		Serial.print(fl_gyroscope[i],3);
+		Serial.print(",");
+    }
+	Serial.print("\n");
 }
