@@ -60,13 +60,11 @@ void IMU_Getdata(void)
 
 	// Read magnetometer LSM303AGR.
 	Mag->GetAxes(magnetometer);
-
- 
-  
 }
 
 
-void IMU_SendDataAccel(void){
+void IMU_SendDataAccel(void)
+{
 	#if (SENDALL==0)
 		IMU_Getdata();
 	#endif
@@ -95,7 +93,8 @@ void IMU_SendDataAccel(void){
 	#endif
 }
 
-void IMU_SendDataRotation(void){
+void IMU_SendDataRotation(void)
+{
 	#if(SENDALL==0)
 		IMU_Getdata();
 	#endif
@@ -126,7 +125,8 @@ void IMU_SendDataRotation(void){
 	#endif
 }
 
-void IMU_SendDataMagneto(void){
+void IMU_SendDataMagneto(void)
+{
 	#if(SENDALL==0)
 		IMU_Getdata();
 	#endif
@@ -153,11 +153,10 @@ void IMU_SendDataMagneto(void){
 	#if !(SENDALL)
 		CAN.sendPacket(CAN_FRAME_ACCELMAGNETOZ,CAN_ID_ACCELMAGNETOZ,8);
 	#endif
-
 }
 
-void IMU_SendDataAll(void){
-
+void IMU_SendDataAll(void)
+{
 	IMU_Getdata();
 	IMU_SendDataAccel();
 	IMU_SendDataMagneto();
@@ -166,7 +165,6 @@ void IMU_SendDataAll(void){
 		Serial.println("CAN_FRAME_ACCELMAGNETOZ");
 	#endif
 	IMU_SendDataRotation();
-
 }
 
 
