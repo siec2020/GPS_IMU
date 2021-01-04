@@ -208,8 +208,8 @@ void printrawdata(void)
 void printconvertdata(void)
 {
 	//ACCEL
-    //CONVERSION : INT giving acceleration in mg (millig) 
-	//							   to FLOAT giving acceleration in m/s²
+	//CONVERSION : INT giving acceleration in mg (millig) 
+	// to FLOAT giving acceleration in m/s²
     
     Serial.print("IMU_data : Acceleration (in m/s²) = [");
     for (int i=0;i<3;i++)
@@ -220,9 +220,9 @@ void printconvertdata(void)
     }
     Serial.println("]");
     
-    //GYRO
-    //CONVERTION : from INT giving orientation in mdps (milli degres per seconde) 
-	//							   to FLOAT giving orientation in rad/sec
+	//GYRO
+	//CONVERTION : from INT giving orientation in mdps (milli degres per seconde) 
+	// to FLOAT giving orientation in rad/sec
     
     Serial.print("IMU_data : Rotation (in rad/s) = [");
     for (int i=0;i<3;i++)
