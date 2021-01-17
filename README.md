@@ -46,3 +46,24 @@ Here is the list:
 |IMU_ROTATIONZ (z rotation)                                |0x206 |
 
 ## Description of the CAN Messages
+### GPS (latitude and longitude)
+
+* **From:** Arduino Due
+* **To:** Raspberry Pi
+* **Lenght (Bytes):** 8
+* **Data field:**
+
+|Bytes 0-3 |Bytes 4-7|
+|:------------|:------------|
+|latitude | longitude |
+
+* **Latitude**
+	* Hexadecimal value of the latitude.
+* **Longitude**	
+	* Hexadecimal value of the longitude. 
+  
+## IMU_ACCELXY (x and y acceleration)
+## IMU_MAGNETOXY (x and y magnetic fields)
+## IMU_ROTATIONXY (x and y rotation)
+## IMU_ACCELMAGNETOZ (z acceleration and z magnetic field)
+## IMU_ROTATIONZ (z rotation)
