@@ -21,5 +21,14 @@ Once your program is ready to be upload to the Arduino Due, setup the connection
 
 Then, press ```Ctrl+U``` or click on the "Upload" button (right arrow next to the check logo).
 
-## File organization
-All you need is to copy-paste all the directory from the "librairies" file to your Arduino Library
+## Launch the program on the hardware
+All you need is to copy-paste all the directories from the "libraries" directory to your Arduino Library folder. On Windows, this folder can be found on ```Documents/Arduino/libraries```, on Linux it should be at ```~/Arduino/libraries```.
+
+Then, you just have to open the ```Due_code_CAN_GPS_IMU.ino``` file and upload it to the Due board.
+
+NB: You need, of course, to plug all the needed shield on the Due board.
+
+Here is the list:
+* The CAN shield ([CAN-BUS shield V2.0 by Seed Studio](https://wiki.seeedstudio.com/CAN-BUS_Shield_V2.0/))
+* The GPS shield ([X-NUCLEO-GNSS1A1](https://www.st.com/en/ecosystems/x-nucleo-gnss1a1.html))
+* The IMU shield ([X-NUCLEO-IKS01A2](https://www.st.com/en/ecosystems/x-nucleo-iks01a2.html))
