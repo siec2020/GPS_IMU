@@ -57,13 +57,80 @@ Here is the list:
 |:------------|:------------|
 |latitude | longitude |
 
-* **Latitude**
-	* Hexadecimal value of the latitude.
-* **Longitude**	
-	* Hexadecimal value of the longitude. 
+* **latitude**
+	* Hexadecimal value of the latitude. The value is an integer, if you want the decimal degree value you need to divide it by 10^7.
+* **longitude**	
+	* Hexadecimal value of the longitude. As for the latitude, the longitude value is an integer, if you want the decimal degree value you need to divide it by 10^7.
   
-## IMU_ACCELXY (x and y acceleration)
-## IMU_MAGNETOXY (x and y magnetic fields)
-## IMU_ROTATIONXY (x and y rotation)
-## IMU_ACCELMAGNETOZ (z acceleration and z magnetic field)
-## IMU_ROTATIONZ (z rotation)
+### IMU_ACCELXY (x and y acceleration)
+* **From:** Arduino Due
+* **To:** Raspberry Pi
+* **Lenght (Bytes):** 8
+* **Data field:**
+
+|Bytes 0-3 |Bytes 4-7|
+|:------------|:------------|
+| x_acceleration | y_acceleration |
+
+* **x_acceleration**
+	* Hexadecimal value of acceleration on the x axis. The current unit is mg (millig). In order to convert it to m/s² you will have to divide it by 1000 and then multiply it with g = 9.807.
+* **y_acceleration**	
+	* Hexadecimal value of acceleration on the y axis. The current unit is mg (millig). In order to convert it to m/s² you will have to divide it by 1000 and then multiply it with g = 9.807.
+	
+### IMU_MAGNETOXY (x and y magnetic fields)
+* **From:** Arduino Due
+* **To:** Raspberry Pi
+* **Lenght (Bytes):** 8
+* **Data field:**
+
+|Bytes 0-3 |Bytes 4-7|
+|:------------|:------------|
+|x_magneto | y_magneto |
+
+* **x_magneto**
+	* Hexadecimal value of the magnetic field on the x axis. The current unit is mGauss (milliGauss). In order to convert it to Tesla you will have to divide it by 10^7.
+* **y_magneto**	
+	* Hexadecimal value of the magnetic field on the y axis. The current unit is mGauss (milliGauss). In order to convert it to Tesla you will have to divide it by 10^7. 
+	
+### IMU_ROTATIONXY (x and y rotation)
+* **From:** Arduino Due
+* **To:** Raspberry Pi
+* **Lenght (Bytes):** 8
+* **Data field:**
+
+|Bytes 0-3 |Bytes 4-7|
+|:------------|:------------|
+|x_rotation | y_rotation |
+
+* **x_rotation**
+	* Hexadecimal value of the rotation on the x axis. The current unit is mdps (milli degres per seconde). In order to convert it to rad/s you will have to divide it by 1000 and then multiply it with (pi/180).
+* **x_rotation**	
+	* Hexadecimal value of the rotation on the y axis. The current unit is mdps (milli degres per seconde). In order to convert it to rad/s you will have to divide it by 1000 and then multiply it with (pi/180).
+	
+### IMU_ACCELMAGNETOZ (z acceleration and z magnetic field)
+* **From:** Arduino Due
+* **To:** Raspberry Pi
+* **Lenght (Bytes):** 8
+* **Data field:**
+
+|Bytes 0-3 |Bytes 4-7|
+|:------------|:------------|
+|z_acceleration | z_magneto |
+
+* **z_acceleration**
+	* Hexadecimal value of acceleration on the z axis. The current unit is mg (millig). In order to convert it to m/s² you will have to divide it by 1000 and then multiply it with g = 9.807.
+* **z_magneto**	
+	* Hexadecimal value of the magnetic field on the z axis. The current unit is mGauss (milliGauss). In order to convert it to Tesla you will have to divide it by 10^7.
+	
+### IMU_ROTATIONZ (z rotation)
+* **From:** Arduino Due
+* **To:** Raspberry Pi
+* **Lenght (Bytes):** 4
+* **Data field:**
+
+|Bytes 0-3 |
+|:------------|
+|z_rotation |
+
+* **z_rotation**
+	* Hexadecimal value of the rotation on the z axis. The current unit is mdps (milli degres per seconde). In order to convert it to rad/s you will have to divide it by 1000 and then multiply it with (pi/180).
