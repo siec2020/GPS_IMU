@@ -18,4 +18,5 @@ Once your program is ready to be upload to the Arduino Due, setup the connection
 * Plug the Arduino Due board to your computer with a micro USB cable with the programming port.
 * Go to Tools/Board and select "Arduino Due (programming port)".
 * Select the active COM port in Tools/Port (next to the one active it should be written "programming port").
+
 Then, press ```Ctrl+U``` or click on the "Upload" button (right arrow next to the check logo).
