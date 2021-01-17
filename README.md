@@ -32,3 +32,17 @@ Here is the list:
 * The CAN shield ([CAN-BUS shield V2.0 by Seed Studio](https://wiki.seeedstudio.com/CAN-BUS_Shield_V2.0/))
 * The GPS shield ([X-NUCLEO-GNSS1A1](https://www.st.com/en/ecosystems/x-nucleo-gnss1a1.html))
 * The IMU shield ([X-NUCLEO-IKS01A2](https://www.st.com/en/ecosystems/x-nucleo-iks01a2.html))
+
+## IDs of the CAN Messages
+
+|Name                                                      |ID    |
+|----------------------------------------------------------|:----:|
+|                                                          |11bits|
+|GPS                                                       |0x201 |
+|x and y acceleration (IMU_ACCELXY)                        |0x202 |
+|x and y magnetic fields (IMU_MAGNETOXY)                   |0x203 |
+|x and y rotation (IMU_ROTATIONXY)                         |0x204 |
+|z acceleration and z magnetic field (IMU_ACCELMAGNETOZ)   |0x205 |
+|z rotation (IMU_ROTATIONZ)                                |0x206 |
+
+## Description of the CAN Messages
