@@ -20,3 +20,6 @@ Once your program is ready to be upload to the Arduino Due, setup the connection
 * Select the active COM port in Tools/Port (next to the one active it should be written "programming port").
 
 Then, press ```Ctrl+U``` or click on the "Upload" button (right arrow next to the check logo).
+
+## File organization
+All you need is to copy-paste all the directory from the "librairies" file to your Arduino Library
