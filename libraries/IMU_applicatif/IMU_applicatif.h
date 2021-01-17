@@ -15,6 +15,9 @@
 #define VALPI 3.142
 #define SENDALL 1 //if you want to use IMU_SendDataAll(void) function put 1  
 				  //it has to be 0 if you want to use other send functions
+#define LED_DEBUG 0 //Be careful, the LED is used by the GPS, set LED_DEBUG
+					//to 1 if only the IMU shield is plugged (and not the GPS)
+
 extern "C" {
 	void IMU_SETUP(void);
 	void IMU_Getdata(void);

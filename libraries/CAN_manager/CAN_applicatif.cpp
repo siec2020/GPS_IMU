@@ -36,6 +36,6 @@ void CAN_SETUP(){
 			Serial.println("Starting CAN failed!");
 		#endif
 	}
-	CAN.onReceive(onReceive);
+	//CAN.onReceive(onReceive);
 	//CAN.filterExtended();
 }

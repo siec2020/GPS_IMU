@@ -12,6 +12,8 @@ Coords_t Coords;
 
 void GPS_SETUP(void) 
 {
+	// Define built in led as an output for debug
+	pinMode(LED_BUILTIN, OUTPUT);
 	//Create the device object passing to it the i2c interface
 	gps = new TeseoLIV3F(&DEV_I2C, 7, 13);
 	//Initialize the device
@@ -150,8 +152,9 @@ void GPS_sendCoords(void)
 	//get the coordinates and store them in Coords_t struct called Coords
 	Coords = gps->getCoords();
 	if (Coords.lat != 0.0 && Coords.lon != 0.0) { //Verify that the GPS is not giving wrong values 
-
-	  //get raw values
+		// Light the Arduino L Led
+		digitalWrite(LED_BUILTIN, HIGH);
+	  	//get raw values
 		lat_raw = gps->getCoords().lat;
 		lon_raw = gps->getCoords().lon;
 
@@ -193,7 +196,8 @@ void GPS_sendCoords(void)
 		#endif
 		
 		CAN.sendPacket(CAN_FRAME_LAT_LON, CAN_ID_LATLONG, 8);
-
+		digitalWrite(LED_BUILTIN, LOW);
+		delay(20);
 	}
 	else
 	{

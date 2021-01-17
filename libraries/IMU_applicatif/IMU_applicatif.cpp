@@ -11,12 +11,13 @@ int32_t gyroscope[3];
 float fl_gyroscope[3];
 
 int32_t accelerometer2[3];
+float fl_magnetometer[3];
 int32_t magnetometer[3];
 
 void IMU_SETUP(void)
 {	
 	// Define built in led as an output for debug
-	pinMode(LED_BUILTIN, OUTPUT);
+	if(LED_DEBUG)pinMode(LED_BUILTIN, OUTPUT);
 
 	// Initialize I2C bus.
 	DEV_I2C.begin();
@@ -46,9 +47,9 @@ void IMU_SETUP(void)
 void IMU_Getdata(void)
 {	
 	// Led blinking.
-	digitalWrite(LED_BUILTIN, HIGH);
+	if(LED_DEBUG)digitalWrite(LED_BUILTIN, HIGH);
 	delay(100);
-	digitalWrite(LED_BUILTIN, LOW);
+	if(LED_DEBUG)digitalWrite(LED_BUILTIN, LOW);
 	delay(100);
   
 	// Read accelerometer and gyroscope.
@@ -247,6 +248,17 @@ void printIntoCSVformat(void)
     {
 		fl_gyroscope[i]=(float(gyroscope[i])/1000.0)*(VALPI/180);
 		Serial.print(fl_gyroscope[i],3);
+		Serial.print(",");
+    }
+	Serial.print("\n");
+
+	//MAGNETO
+	//Magnetic field in mGauss
+	
+	for (int i=0;i<3;i++)
+    {
+		fl_magneto[i]=(float(magnetometer[i]));
+		Serial.print(fl_magnetometer[i],3);
 		Serial.print(",");
     }
 	Serial.print("\n");
